@@ -6,6 +6,8 @@ import HomePage1 from "../challenge-1/HomePage1";
 import LoginPage1 from "../challenge-1/LoginPage1";
 import HomePage2 from "../challenge-2/HomePage2";
 import LoginPage2 from "../challenge-2/LoginPage2";
+import HomePage3 from "../challenge-3/HomePage3";
+import LoginPage3 from "../challenge-3/LoginPage3";
 
 Vue.use(Router);
 
@@ -20,6 +22,9 @@ export const router = new Router({
     { path: "/challenge-2", component: LoginPage2 },
     { path: "/challenge-2/login", component: LoginPage2 },
     { path: "/challenge-2/home", component: HomePage2 },
+    { path: "/challenge-3", component: LoginPage3 },
+    { path: "/challenge-3/login", component: LoginPage3 },
+    { path: "/challenge-3/home", component: HomePage3 },
 
     // otherwise redirect to home
     { path: "/:pathMatch(.*)*", redirect: "/home" },

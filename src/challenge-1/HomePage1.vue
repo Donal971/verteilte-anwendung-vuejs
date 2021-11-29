@@ -24,8 +24,7 @@
         </div>
       </div>
       <hr class="bg-info" />
-      <div class="alert alert-danger" v-if="errorMsg">Error Message</div>
-      <div class="alert alert-success" v-if="sucessMsg">Success Message</div>
+      <input type="button" @click="getUsers()" value="Select All users" />
       <div class="row">
         <div class="col-lg-12">
           <table class="table table-bordered table-striped">
@@ -66,6 +65,16 @@ export default {
     this.user = JSON.parse(localStorage.getItem("user"));
     this.users.loading = true;
     userService.getAll().then((users) => (this.users = users));
+  },
+  getUsers() {
+    console("qwe");
+    axios.get("userdata.php").then(
+      function(response) {
+        console.log(response.data);
+      }.catch(function(error) {
+        console.log(error);
+      })
+    );
   },
 };
 </script>
