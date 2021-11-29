@@ -2,8 +2,9 @@
     header('Content-Type: application/json');
     $pdo = new PDO('mysql:host=localhost;dbname=app_db','root','');
 
-    $username = $_GET['Username'];
-    $password = $_GET['Password'];
+    $data2 = json_decode(file_get_contents('php://input'), true);
+    $username = $data2['username'];
+    $password = $data2['password'];
     $statement = $pdo->prepare("SELECT * FROM users WHERE Username = '".$username."'");
     $statement->execute();
     $data = $statement->fetchAll(PDO::FETCH_ASSOC);
